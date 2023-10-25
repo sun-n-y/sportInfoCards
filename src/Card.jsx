@@ -1,4 +1,7 @@
+import { useState } from 'react';
+
 const Card = ({ id, name, info, image, price, removeCard }) => {
+  const [readMore, setReadMore] = useState(true);
   return (
     <div
       className="single-card"
@@ -10,7 +13,12 @@ const Card = ({ id, name, info, image, price, removeCard }) => {
         alt={name}
       />
       <h4>{name}</h4>
-      <p>{info}</p>
+      <p>
+        {readMore ? info.substring(0, 200) : info}...
+        <button onClick={() => setReadMore(!readMore)}>
+          {readMore ? 'read more' : 'read less'}
+        </button>
+      </p>
       <p>${price}</p>
       <button
         type="button"
