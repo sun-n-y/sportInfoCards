@@ -41,6 +41,22 @@ function App() {
     );
   }
 
+  if (cards.length < 1) {
+    return (
+      <>
+        <h1 style={{ textAlign: 'center', textTransform: 'capitalize' }}>
+          our tours
+        </h1>
+        <button
+          style={{ margin: '0 auto', display: 'block' }}
+          onClick={fetchCards}
+        >
+          refresh
+        </button>
+      </>
+    );
+  }
+
   return (
     <>
       <Cards cards={cards} removeCard={removeCard} />
