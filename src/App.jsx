@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Loading from './Loading';
+import Cards from './Cards';
 
 const url = 'https://course-api.com/react-tours-project';
 
@@ -23,8 +24,6 @@ function App() {
     }
   };
 
-  console.log(cards);
-
   useEffect(() => {
     fetchCards();
   }, []);
@@ -39,7 +38,7 @@ function App() {
 
   return (
     <>
-      <h1>hi</h1>
+      <Cards cards={cards} />
     </>
   );
 }
