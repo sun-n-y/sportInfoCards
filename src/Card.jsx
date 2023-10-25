@@ -1,10 +1,18 @@
 const Card = ({ id, name, info, image, price }) => {
   return (
-    <div className="single-card">
-      <img src={image} alt={name} />
+    <div
+      className="single-card"
+      style={{ border: '2px solid blue', margin: '1rem 0', padding: '.3rem' }}
+    >
+      <img
+        src={image}
+        style={{ height: '9rem', width: '100%', objectFit: 'cover' }}
+        alt={name}
+      />
       <h4>{name}</h4>
       <p>{info}</p>
-      <span>{price}</span>
+      <p>${price}</p>
+      <button type="button">not interested</button>
     </div>
   );
 };
