@@ -1,4 +1,4 @@
-const Card = ({ id, name, info, image, price }) => {
+const Card = ({ id, name, info, image, price, removeCard }) => {
   return (
     <div
       className="single-card"
@@ -12,7 +12,14 @@ const Card = ({ id, name, info, image, price }) => {
       <h4>{name}</h4>
       <p>{info}</p>
       <p>${price}</p>
-      <button type="button">not interested</button>
+      <button
+        type="button"
+        onClick={() => {
+          removeCard(id);
+        }}
+      >
+        not interested
+      </button>
     </div>
   );
 };

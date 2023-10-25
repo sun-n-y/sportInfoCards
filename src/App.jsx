@@ -8,6 +8,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [cards, setCards] = useState([]);
 
+  const removeCard = (id) => {
+    const newCards = cards.filter((card) => card.id !== id);
+    setCards(newCards);
+  };
+
   const fetchCards = async () => {
     setIsLoading(true);
     try {
@@ -38,7 +43,7 @@ function App() {
 
   return (
     <>
-      <Cards cards={cards} />
+      <Cards cards={cards} removeCard={removeCard} />
     </>
   );
 }

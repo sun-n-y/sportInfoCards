@@ -1,6 +1,6 @@
 import Card from './Card';
 
-const Cards = ({ cards }) => {
+const Cards = ({ cards, removeCard }) => {
   return (
     <>
       <h1 style={{ textAlign: 'center', textTransform: 'capitalize' }}>
@@ -8,7 +8,7 @@ const Cards = ({ cards }) => {
       </h1>
       <main style={{ width: '80vw', margin: '0 auto', maxWidth: '1000px' }}>
         {cards.map((card) => {
-          return <Card {...card} key={card.id} />;
+          return <Card {...card} key={card.id} removeCard={removeCard} />;
         })}
       </main>
     </>
